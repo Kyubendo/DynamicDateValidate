@@ -24,7 +24,7 @@ function App() {
                 </Switch>
             </div>
             <div className="container">
-                <DateInput></DateInput>
+                <DateInput/>
             </div>
         </BrowserRouter>
 

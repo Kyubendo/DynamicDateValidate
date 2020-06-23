@@ -38,6 +38,16 @@ export function validateDate(value: string): boolean {
     }
     return ymd(curDate)||dmy(curDate);
 }
+export function validateEmail(value: string): boolean {
+    const re = /(.+@+[a-z]+\.?[a-z]{0,4})|(^(\w\.?)+(@$)?)/gm
+    if (value.length===0) {
+        return true;
+    }
+    if(value.match(re) == null){
+        return false;
+    }
+    return (value.match(re)!.join(''))===value
+}
 
 const Label: React.FC<{ value: string }> = ({ value }) => {
     const isValid = validateDate(value);

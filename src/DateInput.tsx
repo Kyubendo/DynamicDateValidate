@@ -1,5 +1,5 @@
 import * as React from "react";
-import {validateDate} from "./pages/date-validation"
+import {validateDate, validateEmail} from "./pages"
 type State = {
     text:string;
 }
@@ -15,7 +15,7 @@ export class DateInput extends React.Component<Props, State> {
     }
     handleChange(e: React.ChangeEvent<HTMLInputElement>) {
         const value = e.currentTarget.value;
-        if(validateDate(value)) this.setState({text: value});
+        if(validateEmail(value)) this.setState({text: value});
     }
 
     render() {
